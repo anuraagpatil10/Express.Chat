@@ -10,6 +10,8 @@ import ProfilePage from './pages/ProfilePage.jsx';
 
 import { useAuthStore } from './store/useAuthStore.js';
 
+import { useThemeStore } from './store/useThemeStore.js';
+
 import { useEffect } from 'react';
 
 import { Loader } from 'lucide-react';
@@ -20,6 +22,8 @@ const App = () => {
   
   const {authUser, checkAuth, isCheckingAuth } = useAuthStore();
 
+  const { theme } = useThemeStore();
+
   useEffect(() => {checkAuth()}, []);
 
   console.log({authUser});
@@ -29,7 +33,7 @@ const App = () => {
       <Loader className = "size-10 animate-spin" />
     </div>)
 
-  return (<div>
+  return (<div data-theme = {theme}>
 
     <Navbar/>
 

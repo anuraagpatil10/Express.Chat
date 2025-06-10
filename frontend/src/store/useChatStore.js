@@ -13,7 +13,7 @@ export const useChatStore = create((set) => ({
     getUsers: async () => {
         set({ isUsersLoading: true });
         try{
-            const res = await axiosInstance.get("/messages/users");
+            const res = await axiosInstance.get("/message/users");
             set({users: res.data});
         }
         catch (error){
@@ -39,6 +39,8 @@ export const useChatStore = create((set) => ({
         finally{
             set({ isMessagesLoading: false });
         }
-    }
+    },
+
+    setSelectedUser: selectedUser => set({ selectedUser }),
 
 }))

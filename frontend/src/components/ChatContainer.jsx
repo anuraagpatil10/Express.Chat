@@ -22,7 +22,7 @@ const ChatContainer = () => {
 
       <ChatHeader/>
 
-      <p>Messages</p>
+      <p></p>
 
       <MessageInput/>
 
